@@ -1,0 +1,13 @@
+table, td, th {
+    border: 1px green;
+    text-align: right;
+}
+
+th {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+.product_name{
+	text-align: left;
+}
