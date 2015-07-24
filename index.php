@@ -1,7 +1,7 @@
 <?php
 	$db =mysql_connect("127.0.0.1", "root","6a5a4a");
 	$conn = mysql_select_db("gmarket",$db);
-	date_default_timezone_set('Asia/pacific');
+	date_default_timezone_set('Asia/Taipei');
 	mysql_query("set character_set_results='utf8'");
 	mysql_query("set character_set_client='utf8'");
 

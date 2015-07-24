@@ -1,7 +1,7 @@
 <?php
 	$db =mysql_connect("127.0.0.1", "root","6a5a4a");
 	$conn = mysql_select_db("gmarket",$db);
-	date_default_timezone_set('Asia/pacific');
+	date_default_timezone_set('Asia/Taipei');
 	mysql_query("set character_set_results='utf8'");
 	mysql_query("set character_set_client='utf8'");
 	mysql_query("set names utf8");
@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<button></button>
+<button onclick="window.location='index.php'">上一頁</button>
 <h1>Tracing Word: <?php echo $_GET['word']; ?> in Category : <?php echo $_GET['categ']." ".$categ_name;  ?> </h1>
 <form name = 'myform' method = "GET">
 <table cellspacing="10">
@@ -65,7 +65,7 @@
 <table cellspacing="10">
 <tr><th>Product Name </th><th> URL </th> <th> Record Date </th></tr>
 <?php	
-	$sql = "select * from `{$categ_name}` where product_name like '%".$_GET['word']."%'";
+	$sql = "select product_name, url, record_time from `{$categ_name}` where product_name like '%".$_GET['word']."%'";
 	echo $sql;
 	$result = mysql_query($sql) or die ("GG".mysql_error());
 
