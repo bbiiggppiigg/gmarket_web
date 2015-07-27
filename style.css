@@ -1,6 +1,7 @@
-table, td, th {
+table, th {
     border: 1px green;
     text-align: right;
+    overflow: scroll;
 }
 
 th {
@@ -10,4 +11,8 @@ th {
 }
 .product_name{
 	text-align: left;
+}
+
+.odd{
+	background-color: cyan; 
 }
