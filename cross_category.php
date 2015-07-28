@@ -56,8 +56,10 @@
 			$result = mysql_query($sql) or die ("gGG".mysql_error());
 			$sql2 = "select count(*) from `{$categ_list[$j]['categ_name']}` where record_time = '{$date_list[$i]['record_time']}' ";
 			$result2= mysql_query($sql2);
-
-			echo "<td>".mysql_num_rows($result)/mysql_fetch_array($result2)[0]."</td>";
+			$rr = mysql_fetch_row($result2);
+			$num_products = $rr[0];
+			$div = mysql_num_rows($result)/$num_products;	
+			echo "<td>".number_format($div,4)."</td>";
 			
 		}
 		echo "</tr>";
