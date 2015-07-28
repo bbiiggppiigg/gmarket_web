@@ -45,6 +45,7 @@
 				<tr>
 					<th>Start Date</th>
 					<th>End Date</th> 
+					
 				</tr>
 				<tr>
 					<td>
@@ -70,6 +71,7 @@
 					<td>
 						<input type="submit" onclick="return checkForm()"></input>
 					</td>
+					
 				</tr>
 			</table>
 
@@ -77,7 +79,7 @@
 			<input type="hidden" name="categ" value=<?php echo "'{$_GET['categ']}'"; ?> />
 
 		</form>
-		
+<button onclick=<?php echo "\"window.location='cross_category.php?word=".$_GET['word']."'\"" ?> >Cross Category Analysis</button>
 		<div id="div1">
 			<table cellspacing="8" style="display: inline-block;" width="auto" >
 				<tr>

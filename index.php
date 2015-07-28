@@ -4,6 +4,7 @@
 	date_default_timezone_set('Asia/Taipei');
 	mysql_query("set character_set_results='utf8'");
 	mysql_query("set character_set_client='utf8'");
+	mysql_query("set names utf8");
 
 
 ?>
@@ -71,7 +72,7 @@
 
 		#echo $wordlist_table_name;
 		#echo $tfidf_table_name;
-		$sql = "select distinct(b.name), a.tf_idf , b.idf , a.tf_idf/b.idf as tf from `".$tfidf_table_name."` a , `".$wordlist_table_name."` b where a.word_index = b.id order by ".$_POST['sort']." desc limit 50";
+		$sql = "select distinct b.name, a.tf_idf , b.idf , a.tf_idf/b.idf as tf from `".$tfidf_table_name."` a , `".$wordlist_table_name."` b where a.word_index = b.id order by ".$_POST['sort']." desc limit 50";
 		print $sql;
 		$result = mysql_query($sql) or die("GG".mysql_error());
 		echo "<tr><th>Word</th><th>TF_IDF</th><th>TF</th><th>IDF</th></tr>";
